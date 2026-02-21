@@ -3,8 +3,8 @@ import viteImagemin from "vite-plugin-imagemin";
 import svgSpritemapPlugin from "@spiriit/vite-plugin-svg-spritemap";
 
 export default defineConfig({
-  // base: "/First-Vite-project/",
-  base: "./",
+  base: "/First-Vite-project/",
+  // base: "./",
   plugins: [
     svgSpritemapPlugin("src/icons/**/*.svg", {
       output: { filename: "sprites.svg", svgo: true },
