@@ -1,0 +1,222 @@
+@use "variables" as v;
+@use "mixins" as m;
+@use "placeholders";
+
+.work-section {
+  padding: 140px 0 0 0;
+}
+
+.work {
+  margin: 0 auto;
+  @include m.d-flex(center, start, wrap, column);
+
+  // .work__quality
+
+  &__quality {
+    height: 450px;
+    width: 100%;
+    padding: 0 0 0 15px;
+    background: url(../assets/images/3-3.webp) 100% 100% / contain no-repeat;
+
+    &-title {
+      max-width: 600px;
+      width: 100%;
+      @include m.font(45px, 400, 3.1, v.$white);
+    }
+
+    // .work__quality-desc
+
+    &-desc {
+      @include m.font(20px, 300, 1.5, v.$white);
+      max-width: 600px;
+    }
+    @media (max-width: v.$media_xl) {
+      &-title {
+      }
+
+      // .work__quality-desc
+
+      &-desc {
+      }
+      background:
+        linear-gradient(
+          180deg,
+          rgba(103, 143, 242, 1),
+          rgba(103, 143, 242, 0.2)
+        ),
+        url(../assets/images/3-3.webp) 100% 100% / contain no-repeat;
+    }
+    @media (max-width: v.$media_m) {
+      &-title {
+      }
+
+      // .work__quality-desc
+
+      &-desc {
+      }
+      background:
+        linear-gradient(
+          180deg,
+          rgba(103, 143, 242, 1),
+          rgba(103, 143, 242, 0.2)
+        ),
+        url(../assets/images/3-3.webp) 431% 100% / 90% no-repeat;
+      height: 550px;
+      text-align: center;
+    }
+  }
+  // .work__quality-title
+
+  // .work__touch
+
+  &__touch {
+    @include m.d-flex(end, end, wrap, column);
+    position: relative;
+    height: 750px;
+    width: 100%;
+    padding: 0 0 0 15px;
+    margin: 90px 0 90px 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 47px;
+      right: 437px;
+      width: 103%;
+      height: 88%;
+      background: url(../assets/images/4-3.webp) 100% 100% / cover no-repeat;
+      transform: rotate(15deg);
+    }
+    // .work__touch-title
+
+    &-title {
+      @include m.font(45px, 400, 3.1, v.$white);
+    }
+
+    // .work__touch-desc
+
+    &-desc {
+      text-align: end;
+      max-width: 480px;
+      @include m.font(20px, 300, 1.5, v.$white);
+    }
+    @media (max-width: v.$media_xxl) {
+      &::before {
+        top: 47px;
+        right: 437px;
+        width: 103%;
+        height: 88%;
+        background: url(../assets/images/4-3.webp) 100% 100% / cover no-repeat;
+        transform: rotate(15deg);
+      }
+    }
+    @media (max-width: v.$media_xl) {
+      &::before {
+        top: 156px;
+        right: 450px;
+        width: 79%;
+        height: 71%;
+        background: url(../assets/images/4-3.webp) 100% 100% / cover no-repeat;
+        transform: rotate(15deg);
+      }
+    }
+    @media (max-width: v.$media_l) {
+      height: 500px;
+      &::before {
+        top: 156px;
+        right: 450px;
+        width: 79%;
+        height: 71%;
+
+        transform: rotate(15deg);
+      }
+    }
+    @media (max-width: v.$media_m) {
+      @include m.d-flex(start, end, wrap, column);
+      height: 700px;
+      &::before {
+        z-index: -1;
+        top: 298px;
+        right: 218px;
+        width: 88%;
+        height: 43%;
+        transform: rotate(54deg);
+        object-fit: contain;
+      }
+    }
+  }
+
+  // .work__approach
+
+  &__approach {
+    @include m.d-flex(start, start, wrap, column);
+    position: relative;
+    height: 950px;
+    width: 100%;
+    padding: 0 0 0 15px;
+    margin: 150px 0 0 0;
+    background: url(../assets/images/5-3.webp) 100% 100% / contain no-repeat;
+
+    // .work__approach-title
+
+    &-title {
+      padding-top: 200px;
+      @include m.font(45px, 400, 3.1, v.$white);
+    }
+
+    // .work__approach-desc
+
+    &-desc {
+      @include m.font(20px, 300, 1.5, v.$white);
+      max-width: 730px;
+    }
+    @media (max-width: v.$media_xl) {
+      &-title {
+        padding-top: 100px;
+      }
+
+      // .work__approach-desc
+
+      &-desc {
+        max-width: 550px;
+      }
+    }
+    @media (max-width: v.$media_l) {
+      background: url(../assets/images/5-3.webp) 97% 100% / 47% no-repeat;
+      &-title {
+        padding-top: 0;
+      }
+
+      // .work__approach-desc
+
+      &-desc {
+        max-width: 750px;
+      }
+    }
+    @media (max-width: v.$media_l) {
+      margin: 0;
+      background: url(../assets/images/5-3.webp) 97% 100% / 500px 750px
+        no-repeat;
+      &-title {
+        padding-top: 0;
+      }
+
+      // .work__approach-desc
+
+      &-desc {
+        max-width: 750px;
+      }
+    }
+    @media (max-width: v.$media_s) {
+      height: 700px;
+      background: url(../assets/images/5-3.webp) 97% 100% / 270px 400px
+        no-repeat;
+
+      // .work__approach-desc
+
+      &-desc {
+        max-width: 450px;
+      }
+    }
+  }
+}

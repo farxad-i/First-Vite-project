@@ -1,0 +1,38 @@
+@use "variables" as v;
+@use "sass:color";
+
+%hower-black {
+  &:hover {
+    color: v.$black;
+    cursor: pointer;
+  }
+}
+
+%hower-sbg-black {
+  &:hover {
+    fill: v.$black;
+  }
+}
+
+%hower-light {
+  &:hover {
+    color: v.$white;
+    cursor: pointer;
+  }
+}
+
+%hover-cards {
+  &:hover {
+    background-color: color.adjust(v.$black, $alpha: -0.9);
+    cursor: pointer;
+    fill: v.$white;
+    color: v.$white !important;
+    backdrop-filter: blur(40px);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+    .card__title,
+    .card__content {
+      color: v.$white !important;
+    }
+    transform: translateY(-10px);
+  }
+}

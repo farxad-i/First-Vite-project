@@ -1,0 +1,217 @@
+@use "variables" as v;
+@use "mixins" as m;
+@use "placeholders";
+@use "sass:color";
+
+.hero {
+  position: relative;
+  max-width: 1260px;
+  height: 830px;
+  margin: 0 auto;
+  padding: 140px 0 0 0;
+  background: url("../assets/images/1\ \(3\).webp") center/contain no-repeat;
+
+  @media (max-width: v.$media_l) {
+    background: url("../assets/images/1\ \(3\).webp") 0 180px / contain
+      no-repeat;
+  }
+  @media (max-width: v.$media_s) {
+    background: url("../assets/images/1\ \(3\).webp") 0 120px / contain
+      no-repeat;
+  }
+
+  &__content {
+    position: relative;
+    margin: 0 auto;
+    max-width: 950px;
+    width: 100%;
+    @media (max-width: v.$media_l) {
+      max-width: 900px;
+    }
+    @media (max-width: v.$media_m) {
+      justify-content: center;
+      @include m.d-flex(center, center, wrap, column);
+      position: unset;
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    @media (max-width: v.$media_s) {
+      max-width: 350px;
+    }
+
+    &-title {
+      // max-width: 900px;
+
+      @include m.font(120px, 700, 1, v.$black);
+
+      @media (max-width: v.$media_l) {
+        @include m.font(94px, 700, 1, v.$black);
+      }
+      @media (max-width: v.$media_m) {
+        @include m.font(74px, 700, 1, v.$black);
+      }
+      @media (max-width: v.$media_s) {
+        @include m.font(50px, 700, 1, v.$black);
+      }
+    }
+
+    &-btn {
+      position: absolute;
+      width: 380px;
+      height: 80px;
+      border-radius: 45px;
+      background-color: v.$black;
+      border: none;
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 429%;
+      @include m.font(28px, 500, 4.29, v.$white);
+      @include m.d-flex();
+      @include m.position(absolute, 1, -1, bottom, right, 15px, 0);
+
+      &:hover {
+        background-color: color.adjust(v.$black, $alpha: -0.35);
+      }
+      &:focus {
+        outline: none;
+      }
+      &:focus-visible {
+        outline: 2px solid v.$white;
+      }
+      @media (max-width: v.$media_l) {
+        @include m.font(22px, 500, 4.29, v.$white);
+        @include m.position(absolute, 1, -1, bottom, left, 15px, 440px);
+        width: 300px;
+        height: 60px;
+      }
+      @media (max-width: v.$media_m) {
+        position: unset;
+        margin: 50px 0;
+        @include m.font(18px, 500, 4.29, v.$white);
+      }
+    }
+  }
+
+  &__notify {
+    position: relative;
+    margin: 170px auto 0;
+    width: 680px;
+    height: 60px;
+    background-color: color.adjust(v.$white, $alpha: -0.85);
+    border-radius: 20px;
+    @include m.d-flex(end, center, nowrap, row, 10px);
+
+    @media (max-width: v.$media_l) {
+      width: 650px;
+    }
+    @media (max-width: v.$media_m) {
+      width: 480px;
+
+      height: 150px;
+      margin: 70px auto;
+      @include m.d-flex(center, center, nowrap, column);
+    }
+    @media (max-width: v.$media_s) {
+      width: 350px;
+
+      height: 180px;
+      margin: 50px auto;
+    }
+    &-img {
+      width: 128px;
+      height: 198px;
+      object-fit: cover;
+      @include m.position(absolute, 1, -1, bottom, left, -55px, -25px);
+
+      @media (max-width: v.$media_l) {
+        width: 118px;
+        height: 188px;
+      }
+      @media (max-width: v.$media_m) {
+        @include m.position(absolute, 1, -1, bottom, left, 0, -25px);
+      }
+      @media (max-width: v.$media_s) {
+        @include m.position(absolute, 1, -1, bottom, left, 0, -35px);
+      }
+    }
+
+    &-content {
+      width: 450px;
+      height: 100%;
+      @include m.font(14px, 400, 1, v.$black);
+      @include m.d-flex(center, center, nowrap, row);
+      border-right: 1px solid v.$white;
+      @media (max-width: v.$media_m) {
+        height: 50%;
+        border-right: none;
+        max-width: 400px;
+
+        margin-left: 100px;
+      }
+      @media (max-width: v.$media_s) {
+        max-width: 280px;
+
+        margin-left: 70px;
+      }
+    }
+
+    &-btn {
+      text-transform: uppercase;
+      background-color: transparent;
+      border: none;
+      width: 115px;
+      @include m.font(25px, 400, 1, v.$black);
+      @extend %hower-light;
+      &:focus {
+        outline: none;
+      }
+      &:focus-visible {
+        outline: 2px solid v.$white;
+      }
+      @media (max-width: v.$media_m) {
+        border-top: 1px solid v.$white;
+        width: 100%;
+        height: 30%;
+        @include m.d-flex(center, center, nowrap, row);
+      }
+      @media (max-width: v.$media_s) {
+        box-sizing: content-box;
+        border-top: 1px solid v.$white;
+        width: 100%;
+        height: 25%;
+        @include m.d-flex(center, end, nowrap, row);
+        @include m.font(35px, 400, 1, v.$black);
+        padding-top: 5px;
+      }
+    }
+  }
+
+  &__scroll {
+    @include m.position(absolute, 1, -1, bottom, left, 160px, 10px);
+    @media (max-width: v.$media_l) {
+      @include m.position(absolute, 1, -1, bottom, left, 220px, 5px);
+    }
+    @media (max-width: v.$media_m) {
+      @include m.position(absolute, 1, -1, bottom, left, 180px, 5px);
+    }
+    @media (max-width: v.$media_s) {
+      @include m.position(absolute, 1, -1, bottom, left, 230px, 5px);
+    }
+    &-down {
+      position: relative;
+      @include m.font(16px, 500, 1, v.$white);
+      writing-mode: vertical-lr;
+      cursor: pointer;
+
+      &::after {
+        @include m.position(absolute, 1, -1, top, left, 100px, 7px);
+        display: block;
+        content: "";
+        width: 1px;
+        height: 75px;
+        background-color: v.$white;
+      }
+    }
+  }
+}
