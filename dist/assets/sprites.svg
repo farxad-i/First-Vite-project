@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="sprite-home" viewBox="0 0 24 24">
-  <path d="M12 2L15 8H9L12 2Z"/>
-</symbol><use xlink:href="#sprite-home" width="24" height="24" y="0"/><view id="sprite-home-view" viewBox="0 0 24 24"/><symbol id="sprite-settings" viewBox="0 0 24 24">
-  <path d="M12 2L15 8H9L12 2Z"/>
-</symbol><use xlink:href="#sprite-settings" width="24" height="24" y="24"/><view id="sprite-settings-view" viewBox="0 24 24 24"/><symbol id="sprite-user" viewBox="0 0 24 24">
-  <path d="M12 2L15 8H9L12 2Z"/>
-</symbol><use xlink:href="#sprite-user" width="24" height="24" y="48"/><view id="sprite-user-view" viewBox="0 48 24 24"/></svg>
