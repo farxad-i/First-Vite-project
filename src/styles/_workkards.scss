@@ -33,6 +33,7 @@
       .experience__cards-btn {
         background-color: color.adjust(v.$white, $alpha: -0.15);
         translate: 15px -15px;
+        cursor: pointer;
       }
     }
     position: relative;
